@@ -24,10 +24,9 @@ git checkout -- index.html
 
 # Set us up a clean docker-machine
 if docker-machine ls | grep $MACHINE_NAME; then
-    #docker-machine stop $MACHINE_NAME
-    #docker-machine rm -f $MACHINE_NAME
-    #docker-machine create --driver=virtualbox $MACHINE_NAME
-    echo "TODO RECREATE VM"
+    docker-machine stop $MACHINE_NAME
+    docker-machine rm -f $MACHINE_NAME
+    docker-machine create --driver=virtualbox $MACHINE_NAME
 fi
 
 docker_ip=$(docker-machine ip $MACHINE_NAME)
