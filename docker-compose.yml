@@ -1,0 +1,33 @@
+alpine:
+  build: .
+  dockerfile: Dockerfile.alpine
+  command: python app.py
+  volumes:
+    - ".:/app"
+  ports:
+    - "8000:5000"
+
+slim:
+  build: .
+  dockerfile: Dockerfile.slim
+  command: python app.py
+  volumes:
+    - ".:/app"
+  ports:
+    - "8001:5000"
+
+nginx-alpine:
+  build: .
+  dockerfile: Dockerfile.nginx-alpine
+  volumes:
+    - ".:/usr/html/:ro"
+  ports:
+    - "8002:80"
+
+nginx-jessie:
+  build: .
+  dockerfile: Dockerfile.nginx-jessie
+  volumes:
+    - ".:/usr/share/nginx/html:ro"
+  ports:
+    - "8003:80"
