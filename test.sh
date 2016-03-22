@@ -3,6 +3,12 @@
 MACHINE_NAME="fschangetest"
 errors=0
 
+if [ "$1" == "nfs" ]; then
+    install_nfs=1
+else
+    install_nfs=0
+fi
+
 check_result() {
     if [ "$?" -ne "0" ]; then
         errors=1
@@ -27,6 +33,9 @@ if docker-machine ls | grep $MACHINE_NAME; then
     docker-machine stop $MACHINE_NAME
     docker-machine rm -f $MACHINE_NAME
     docker-machine create --driver=virtualbox $MACHINE_NAME
+    if [ "$install_nfs" -eq 1 ]; then
+        docker-machine-nfs $MACHINE_NAME
+    fi
 fi
 
 docker_ip=$(docker-machine ip $MACHINE_NAME)
@@ -70,7 +79,7 @@ error_message="CHANGED not found in source files"
 exit_if_errors
 
 # Wait for changes to be picked up
-sleep 10
+sleep 30
 
 # Verify changed conditions
 result_message="Python Alpine: FAILED"
@@ -91,3 +100,5 @@ check_result
 
 error_message="CHANGED not found on one or more URLs"
 exit_if_errors
+
+echo "======> SUCCESS! NFS: $install_nfs"
