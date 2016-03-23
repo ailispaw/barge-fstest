@@ -12,22 +12,13 @@ Files not changing on docker-machine virtualbox instances?
 4. You make changes to files but they don't appear in the running container. Sometimes old content in the files continues to appear, even after a docker-compose stop/start.
 
 Workaround
-=============
+--------------
 
 Using [docker-machine-nfs](https://github.com/adlogix/docker-machine-nfs) seems to alleiviate the issue.
 
 
-Requirements
-================
-* [OS X El Capitan](https://itunes.apple.com/us/app/os-x-el-capitan/id1018109117?mt=12)
-* [Virtualbox Version 5.0.16 r105871](https://www.virtualbox.org/wiki/Downloads)
-* [Docker version 1.10.3, build 20f81dd](https://docs.docker.com/engine/installation/mac/)
-* [docker-compose version 1.6.2, build 4d72027](https://docs.docker.com/compose/)
-* [docker-machine version 0.6.0, build e27fb87](https://docs.docker.com/machine/)
-* [docker-machine-nfs](https://github.com/adlogix/docker-machine-nfs) Optional
-
 Usage
-=======
+--------
 ```
 git clone https://github.com/cmheisel/docker-machine-fstest.git
 
@@ -40,5 +31,25 @@ bash ./test.sh
 bash ./test.sh nfs
 ```
 
+Requirements
+---------------
+* [OS X El Capitan](https://itunes.apple.com/us/app/os-x-el-capitan/id1018109117?mt=12)
+* [Virtualbox Version 5.0.16 r105871](https://www.virtualbox.org/wiki/Downloads)
+* [Docker version 1.10.3, build 20f81dd](https://docs.docker.com/engine/installation/mac/)
+* [docker-compose version 1.6.2, build 4d72027](https://docs.docker.com/compose/)
+* [docker-machine version 0.6.0, build e27fb87](https://docs.docker.com/machine/)
+* [docker-machine-nfs](https://github.com/adlogix/docker-machine-nfs) Optional
+
+
 My Results
 =============
+```
+# Without NFS
+======> Python Alpine: FAILED
+======> Nginx Alpine: FAILED
+======> Nginx Jessie: FAILED
+======> CHANGED not found on one or more URLs
+
+# With NFS
+======> SUCCESS! NFS: 1
+```
