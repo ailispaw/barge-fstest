@@ -83,6 +83,29 @@ exit_if_errors
 sleep 30
 
 # Verify changed conditions
+echo "======> Checking for change w/out restart"
+result_message="Python Alpine: FAILED"
+curl -s http://$docker_ip:8000 | grep -q "CHANGED"
+check_result
+
+result_message="Python Slim: FAILED"
+curl -s http://$docker_ip:8001 | grep -q "CHANGED"
+check_result
+
+result_message="Nginx Alpine: FAILED"
+curl -s http://$docker_ip:8002 | grep -q "CHANGED"
+check_result
+
+result_message="Nginx Jessie: FAILED"
+curl -s http://$docker_ip:8003 | grep -q "CHANGED"
+check_result
+
+echo "======> Restarting containers"
+docker-compose stop
+docker-compose up -d
+sleep 30
+
+echo "======> Checking for change with restart"
 result_message="Python Alpine: FAILED"
 curl -s http://$docker_ip:8000 | grep -q "CHANGED"
 check_result
