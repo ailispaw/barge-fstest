@@ -33,3 +33,8 @@ bash ./test.sh
 # Optionally test it with NFS
 bash ./test.sh nfs
 ```
+
+Workaround
+=============
+
+Using [docker-machine-nfs](https://github.com/adlogix/docker-machine-nfs) seems to alleiviate the issue.
