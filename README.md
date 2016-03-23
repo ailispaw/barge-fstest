@@ -22,7 +22,7 @@ Requirements
 * [OS X El Capitan](https://itunes.apple.com/us/app/os-x-el-capitan/id1018109117?mt=12)
 * [Virtualbox Version 5.0.16 r105871](https://www.virtualbox.org/wiki/Downloads)
 * [Docker version 1.10.3, build 20f81dd](https://docs.docker.com/engine/installation/mac/)
-* [docker-compose version 1.5.2, build 7240ff3](https://docs.docker.com/compose/)
+* [docker-compose version 1.6.2, build 4d72027](https://docs.docker.com/compose/)
 * [docker-machine version 0.6.0, build e27fb87](https://docs.docker.com/machine/)
 * [docker-machine-nfs](https://github.com/adlogix/docker-machine-nfs) Optional
 
@@ -39,3 +39,6 @@ bash ./test.sh
 # Optionally test it with NFS
 bash ./test.sh nfs
 ```
+
+My Results
+=============
