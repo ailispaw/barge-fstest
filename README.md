@@ -14,7 +14,7 @@ Files not changing on docker-machine virtualbox instances?
 Workaround
 --------------
 
-Using [docker-machine-nfs](https://github.com/adlogix/docker-machine-nfs) seems to alleiviate the issue.
+Using [docker-machine-nfs](https://github.com/adlogix/docker-machine-nfs) seems to fix the issue.
 
 
 Usage
