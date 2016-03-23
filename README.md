@@ -1,7 +1,7 @@
 Files not changing on docker-machine virtualbox instances?
 =============================================================
 
-**Potential bug I've encountered**:
+**[Potential bug I've encountered](https://github.com/docker/machine/issues/3222)**:
 
 1. You've spun up a docker-machine VM using Virtualbox on OSX.
 
