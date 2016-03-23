@@ -35,6 +35,8 @@ if docker-machine ls | grep $MACHINE_NAME; then
     if [ "$install_nfs" -eq 1 ]; then
         docker-machine-nfs $MACHINE_NAME
     fi
+else
+    docker-machine create --driver=virtualbox $MACHINE_NAME
 fi
 
 docker_ip=$(docker-machine ip $MACHINE_NAME)
