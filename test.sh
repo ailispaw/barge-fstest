@@ -25,8 +25,7 @@ exit_if_errors() {
     fi
 }
 
-git checkout -- app.py
-git checkout -- index.html
+git checkout -- app.py index.html
 
 # Set us up a clean docker-machine
 if docker-machine ls | grep $MACHINE_NAME; then
