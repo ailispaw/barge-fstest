@@ -11,6 +11,12 @@ Files not changing on docker-machine virtualbox instances?
 
 4. You make changes to files but they don't appear in the running container. Sometimes old content in the files continues to appear, even after a docker-compose stop/start.
 
+Workaround
+=============
+
+Using [docker-machine-nfs](https://github.com/adlogix/docker-machine-nfs) seems to alleiviate the issue.
+
+
 Requirements
 ================
 * [OS X El Capitan](https://itunes.apple.com/us/app/os-x-el-capitan/id1018109117?mt=12)
@@ -33,8 +39,3 @@ bash ./test.sh
 # Optionally test it with NFS
 bash ./test.sh nfs
 ```
-
-Workaround
-=============
-
-Using [docker-machine-nfs](https://github.com/adlogix/docker-machine-nfs) seems to alleiviate the issue.
