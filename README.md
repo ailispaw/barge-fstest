@@ -9,7 +9,7 @@ Files not changing on docker-machine virtualbox instances?
 
 3. You've got process that'll reload on changes to the files -- ./manage.py runserver, Flask's .run(debug=True), etc.
 
-4. You make changes to files but they don't appear in the running container. Sometimes old content in the files continues to appear, even after a docker-compose stop/start.
+4. You make changes to files but they don't appear in the running container. Sometimes old content in the files continues to appear, **even after a docker-compose stop/start**.
 
 Workaround
 --------------
