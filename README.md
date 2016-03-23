@@ -45,6 +45,12 @@ My Results
 =============
 ```
 # Without NFS
+======> Checking for change w/out restart
+======> Python Alpine: FAILED
+======> Nginx Alpine: FAILED
+======> Nginx Jessie: FAILED
+======> Restarting containers
+======> Checking for change with restart
 ======> Python Alpine: FAILED
 ======> Nginx Alpine: FAILED
 ======> Nginx Jessie: FAILED
