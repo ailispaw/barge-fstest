@@ -27,26 +27,13 @@ exit_if_errors() {
 
 git checkout -- app.py index.html
 
-# Set us up a clean docker-machine
-if docker-machine ls | grep $MACHINE_NAME; then
-    docker-machine stop $MACHINE_NAME
-    docker-machine rm -f $MACHINE_NAME
-    docker-machine create --driver=virtualbox $MACHINE_NAME
-    if [ "$install_nfs" -eq 1 ]; then
-        docker-machine-nfs $MACHINE_NAME
-    fi
-else
-    docker-machine create --driver=virtualbox $MACHINE_NAME
-fi
+vagrant destroy -f
+NFS=$install_nfs vagrant up --no-provision
 
-docker_ip=$(docker-machine ip $MACHINE_NAME)
-eval $(docker-machine env $MACHINE_NAME)
-docker-compose stop
-docker-compose rm -f
+docker_ip="192.168.33.10"
 
 # Spin up our containers
-docker-compose build
-docker-compose up -d
+vagrant provision
 
 # Wait to ensure everythings up
 sleep 3
@@ -101,8 +88,8 @@ curl -s http://$docker_ip:8003 | grep -q "CHANGED"
 check_result
 
 echo "======> Restarting containers"
-docker-compose stop
-docker-compose up -d
+vagrant reload
+docker start $(docker ps -aq)
 sleep 30
 
 echo "======> Checking for change with restart"

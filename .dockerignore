@@ -1,0 +1,9 @@
+.git/
+
+README.md
+test.sh
+*.bak
+*.yml
+
+Vagrantfile
+.vagrant/
