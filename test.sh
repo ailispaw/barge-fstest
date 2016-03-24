@@ -67,7 +67,7 @@ error_message="CHANGED not found in source files"
 exit_if_errors
 
 # Wait for changes to be picked up
-sleep 30
+sleep 3
 
 # Verify changed conditions
 echo "======> Checking for change w/out restart"
@@ -92,7 +92,7 @@ check_result
 echo "======> Restarting containers"
 vagrant reload
 docker start $(docker ps -aq)
-sleep 30
+sleep 3
 
 echo "======> Checking for change with restart"
 result_message="Python Alpine: FAILED"
