@@ -71,9 +71,11 @@ sleep 30
 
 # Verify changed conditions
 echo "======> Checking for change w/out restart"
-result_message="Python Alpine: FAILED"
-curl -s http://$docker_ip:8000 | grep -q "CHANGED"
-check_result
+if [ "$install_nfs" = "1" ]; then
+    result_message="Python Alpine: FAILED"
+    curl -s http://$docker_ip:8000 | grep -q "CHANGED"
+    check_result
+fi
 
 result_message="Python Slim: FAILED"
 curl -s http://$docker_ip:8001 | grep -q "CHANGED"
