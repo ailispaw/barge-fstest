@@ -43,6 +43,16 @@ Requirements
 
 My Results
 =============
+
+**Really weird results in bold**
+
+| Distro/App   	| Changes appear on file change 	| Changes appear on container restart 	|
+|--------------	|-------------------------------	|-------------------------------------	|
+| Alpine/Flask 	| NO                            	| **NO**                              	|
+| Alpine/Nginx 	| NO                            	| **NO**                              	|
+| Debian/Flask 	| Yes                           	| Yes                                 	|
+| Debian/Nginx 	| **NO**                        	| **NO**                              	|
+
 ```
 # Without NFS
 ======> Checking for change w/out restart
