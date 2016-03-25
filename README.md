@@ -21,20 +21,18 @@ bash ./test.sh nfs
 Requirements
 ---------------
 * [Virtualbox Version 5.0.16 r105871](https://www.virtualbox.org/wiki/Downloads)
-* [Vagrant](https://www.vagrantup.com/downloads.html)
+* [Vagrant Version 1.8.1](https://www.vagrantup.com/downloads.html)
 
 
 My Results
 =============
 
-**Really weird results in bold**
-
-| Distro/App   	| Changes appear on file change 	| Changes appear on container restart 	|
-|--------------	|-------------------------------	|-------------------------------------	|
-| Alpine/Flask 	| NO                            	| **NO**                              	|
-| Alpine/Nginx 	| NO                            	| **NO**                              	|
-| Debian/Flask 	| Yes                           	| Yes                                 	|
-| Debian/Nginx 	| **NO**                        	| **NO**                              	|
+| Distro/App   | Changes appear on file change | Changes appear on container restart |
+|--------------|-------------------------------|-------------------------------------|
+| Alpine/Flask | Yes (causes an error)         | Yes                                 |
+| Alpine/Nginx | Yes                           | Yes                                 |
+| Debian/Flask | Yes                           | Yes                                 |
+| Debian/Nginx | Yes                           | Yes                                 |
 
 ```
 # Without NFS
