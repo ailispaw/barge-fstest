@@ -5,11 +5,9 @@ Files not changing on virtualbox instances?
 Usage
 --------
 ```
-git clone https://github.com/ailispaw/docker-machine-fstest.git
+git clone https://github.com/ailispaw/docker-root-fstest.git
 
-cd docker-machine-fstest/
-
-git checkout docker-root
+cd docker-root-fstest/
 
 # Run test with default volume mounting from virtualbox
 bash ./test.sh
