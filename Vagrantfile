@@ -11,7 +11,7 @@ end
 Vagrant.configure(2) do |config|
   config.vm.define "fschangetest"
 
-  config.vm.box = "ailispaw/docker-root"
+  config.vm.box = "ailispaw/barge"
 
   config.vm.network "private_network", ip: "192.168.33.10"
 
