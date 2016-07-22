@@ -90,7 +90,7 @@ curl -s http://$docker_ip:8003 | grep -q "CHANGED"
 check_result
 
 echo "======> Restarting containers"
-vagrant reload
+NFS=$install_nfs vagrant reload
 docker start $(docker ps -aq)
 sleep 3
 
