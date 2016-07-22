@@ -37,7 +37,7 @@ Vagrant.configure(2) do |config|
 
     docker.build_image "/vagrant", args: "-t nginx-alpine -f /vagrant/Dockerfile.nginx-alpine"
     docker.run "nginx-alpine",
-      args: "-v /vagrant:/usr/html -p 8002:80",
+      args: "-v /vagrant:/usr/share/nginx/html -p 8002:80",
       restart: false
 
     docker.build_image "/vagrant", args: "-t nginx-jessie -f /vagrant/Dockerfile.nginx-jessie"

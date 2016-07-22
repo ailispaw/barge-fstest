@@ -1,1 +1,1 @@
-FROM smebberson/alpine-nginx:2.1.1
+FROM nginx:1.11.1-alpine

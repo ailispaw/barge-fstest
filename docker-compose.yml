@@ -20,7 +20,7 @@ nginx-alpine:
   build: .
   dockerfile: Dockerfile.nginx-alpine
   volumes:
-    - ".:/usr/html/"
+    - ".:/usr/share/nginx/html"
   ports:
     - "8002:80"
 
