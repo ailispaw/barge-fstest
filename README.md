@@ -5,9 +5,9 @@ Files not changing on virtualbox instances?
 Usage
 --------
 ```
-git clone https://github.com/ailispaw/docker-root-fstest.git
+git clone https://github.com/bargees/barge-fstest.git
 
-cd docker-root-fstest/
+cd barge-fstest/
 
 # Run test with default volume mounting from virtualbox
 bash ./test.sh
@@ -18,8 +18,8 @@ bash ./test.sh nfs
 
 Requirements
 ---------------
-* [Virtualbox Version 5.0.16 r105871](https://www.virtualbox.org/wiki/Downloads)
-* [Vagrant Version 1.8.1](https://www.vagrantup.com/downloads.html)
+* [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
+* [Vagrant](https://www.vagrantup.com/downloads.html)
 
 
 My Results
